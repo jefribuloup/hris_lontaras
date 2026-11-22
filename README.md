@@ -42,6 +42,18 @@ Dikembangkan bertahap: **Flask + HTML (Jinja2)** untuk MVP, dengan arsitektur ya
 5. **Validasi memakai schema** (Marshmallow/Pydantic) agar kontrak data jelas.
 6. Saat migrasi: template Jinja2 diganti halaman Next.js; backend tidak perlu ditulis ulang.
 
+### 4b. Navigasi Tanpa Reload (Turbo Drive)
+
+Semua halaman berpindah tanpa reload penuh memakai [Turbo Drive](https://turbo.hotwired.dev/) (file di `app/static/js/vendor/`, dimuat di `base.html`). Tidak perlu mengubah link atau form yang ada.
+
+- Semua template meng-extend `templates/base.html`; footer ada di `templates/partials/footer.html`.
+- CSS/JS khusus halaman diletakkan di `{% block head %}`.
+- **Form POST wajib:** jika sukses, `redirect(url, code=303)`; jika gagal validasi, `render_template(...), 422`.
+- Script halaman memakai event delegation (lihat `static/js/login.js`), bukan `DOMContentLoaded`.
+- Elemen yang harus tetap ada antar halaman (mis. sidebar): beri atribut `data-turbo-permanent` dan `id` tetap.
+- Matikan Turbo untuk link tertentu (download, logout): `data-turbo="false"`.
+- Saat migrasi ke Next.js, mekanisme ini digantikan router Next.js.
+
 ## 5. Struktur Folder
 
 ```
