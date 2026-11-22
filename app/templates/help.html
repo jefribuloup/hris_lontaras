@@ -1,0 +1,76 @@
+{% extends "pages/_layout.html" %}
+{% block title %}Pusat Bantuan — HRIS{% endblock %}
+
+{% block page_head %}
+  <script src="{{ url_for('static', filename='js/pages.js') }}" defer></script>
+{% endblock %}
+
+{% block page %}
+  <div class="pg-hero">
+    <h1>Pusat Bantuan</h1>
+    <p>Jawaban atas pertanyaan yang sering diajukan seputar HRIS.</p>
+  </div>
+
+  <div class="pg-search">
+    <label for="faq-search" class="pg-sr">Cari bantuan</label>
+    <input id="faq-search" type="search" placeholder="Cari, misalnya: lupa kata sandi, cuti, slip gaji" autocomplete="off" data-faq-search>
+  </div>
+
+  <div data-faq>
+    <section class="pg-faq-group" data-faq-group>
+      <h2>Akun dan masuk</h2>
+      <details data-faq-item><summary>Saya lupa kata sandi. Apa yang harus dilakukan?</summary>
+        <div class="pg-faq-a">Klik "Lupa kata sandi?" di halaman masuk dan ikuti petunjuknya. Jika fitur tersebut belum tersedia untuk akun Anda, hubungi HR untuk meminta pengaturan ulang kata sandi.</div></details>
+      <details data-faq-item><summary>Saya belum punya akun. Bagaimana cara mendapatkannya?</summary>
+        <div class="pg-faq-a">Akun dibuat oleh HR Admin saat data kepegawaian Anda dimasukkan. Hubungi HR jika Anda sudah bergabung tetapi belum menerima akses.</div></details>
+      <details data-faq-item><summary>Saya tidak bisa masuk padahal kata sandi sudah benar.</summary>
+        <div class="pg-faq-a">Pastikan Anda memilih peran yang sesuai (Karyawan, Atasan, atau HR Admin), periksa huruf besar-kecil, dan coba lagi. Jika tetap gagal, akun mungkin dikunci atau dinonaktifkan. Hubungi HR.</div></details>
+    </section>
+
+    <section class="pg-faq-group" data-faq-group>
+      <h2>Absensi</h2>
+      <details data-faq-item><summary>Bagaimana cara absen masuk dan pulang?</summary>
+        <div class="pg-faq-a">Buka menu Absensi, lalu tekan tombol masuk atau pulang. Jika lokasi atau foto diwajibkan, izinkan akses pada peramban Anda.</div></details>
+      <details data-faq-item><summary>Saya lupa absen. Apa yang harus dilakukan?</summary>
+        <div class="pg-faq-a">Ajukan koreksi absensi melalui sistem dengan menyertakan alasan. Pengajuan akan diproses melalui persetujuan atasan, lalu data diperbarui.</div></details>
+      <details data-faq-item><summary>Kenapa absen saya ditolak karena lokasi?</summary>
+        <div class="pg-faq-a">Absen hanya dapat dilakukan dalam radius lokasi kerja yang ditetapkan. Pastikan GPS aktif dan akurat. Jika Anda bekerja di luar kantor, tanyakan kepada atasan atau HR.</div></details>
+    </section>
+
+    <section class="pg-faq-group" data-faq-group>
+      <h2>Cuti dan izin</h2>
+      <details data-faq-item><summary>Bagaimana cara mengajukan cuti?</summary>
+        <div class="pg-faq-a">Buka menu Cuti, pilih jenis cuti dan tanggal, isi alasan, lalu kirim. Sistem akan memeriksa saldo cuti dan meneruskan pengajuan ke atasan.</div></details>
+      <details data-faq-item><summary>Di mana saya melihat status pengajuan cuti?</summary>
+        <div class="pg-faq-a">Status (menunggu, disetujui, atau ditolak) terlihat pada daftar pengajuan Anda, dan Anda akan menerima pemberitahuan setiap ada perubahan.</div></details>
+      <details data-faq-item><summary>Saldo cuti saya tidak sesuai.</summary>
+        <div class="pg-faq-a">Hubungi HR dengan menyebutkan jenis cuti dan periode yang Anda maksud agar dapat diperiksa.</div></details>
+    </section>
+
+    <section class="pg-faq-group" data-faq-group>
+      <h2>Slip gaji</h2>
+      <details data-faq-item><summary>Di mana saya mengunduh slip gaji?</summary>
+        <div class="pg-faq-a">Slip gaji tersedia di menu Slip Gaji setelah periode penggajian disetujui dan dibayarkan.</div></details>
+      <details data-faq-item><summary>Ada komponen gaji yang tampak salah.</summary>
+        <div class="pg-faq-a">Catat periode dan komponen yang dimaksud, lalu hubungi HR agar dapat ditinjau.</div></details>
+    </section>
+
+    <section class="pg-faq-group" data-faq-group>
+      <h2>Data pribadi</h2>
+      <details data-faq-item><summary>Bagaimana cara memperbarui data pribadi saya?</summary>
+        <div class="pg-faq-a">Buka menu Profil untuk memperbarui data yang boleh Anda ubah. Perubahan data tertentu, seperti nama atau rekening bank, mungkin memerlukan verifikasi HR.</div></details>
+      <details data-faq-item><summary>Bagaimana data saya dilindungi?</summary>
+        <div class="pg-faq-a">Lihat penjelasan lengkapnya di <a href="{{ url_for('pages.privacy') }}">Kebijakan Privasi</a>.</div></details>
+    </section>
+
+    <p class="pg-empty" data-faq-empty hidden>Tidak ada hasil yang cocok. Coba kata kunci lain atau <a href="{{ url_for('pages.contact') }}">hubungi HR</a>.</p>
+  </div>
+
+  <div class="pg-cta">
+    <div>
+      <h2>Belum menemukan jawabannya?</h2>
+      <p>Tim HR siap membantu Anda.</p>
+    </div>
+    <a class="pg-btn" href="{{ url_for('pages.contact') }}">Hubungi HR</a>
+  </div>
+{% endblock %}
