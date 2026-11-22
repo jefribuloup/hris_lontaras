@@ -1,0 +1,109 @@
+{% extends "pages/_layout.html" %}
+{# CATATAN: teks ini adalah draf umum. Mohon ditinjau penasihat hukum sebelum dipublikasikan. #}
+{% block title %}Kebijakan Privasi — HRIS{% endblock %}
+
+{% block page %}
+  <div class="pg-hero">
+    <h1>Kebijakan Privasi</h1>
+    <p>Terakhir diperbarui: {{ legal_updated }}</p>
+  </div>
+
+  <div class="pg-doc">
+    <nav class="pg-toc" aria-label="Daftar isi">
+      <h2>Daftar isi</h2>
+      <ol>
+        <li><a href="#pendahuluan">Pendahuluan</a></li>
+        <li><a href="#data-dikumpulkan">Data yang kami kumpulkan</a></li>
+        <li><a href="#tujuan">Tujuan penggunaan data</a></li>
+        <li><a href="#pembagian">Pembagian data</a></li>
+        <li><a href="#keamanan">Penyimpanan dan keamanan</a></li>
+        <li><a href="#retensi">Masa penyimpanan</a></li>
+        <li><a href="#hak">Hak Anda</a></li>
+        <li><a href="#cookie">Cookie dan sesi</a></li>
+        <li><a href="#perubahan">Perubahan kebijakan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ol>
+    </nav>
+
+    <article class="pg-prose">
+      <section id="pendahuluan">
+        <h2>1. Pendahuluan</h2>
+        <p>{{ company_name }} ("Perusahaan") mengelola sistem HRIS ini untuk mendukung administrasi kepegawaian. Kebijakan ini menjelaskan bagaimana data pribadi Anda dikumpulkan, digunakan, disimpan, dan dilindungi sesuai Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi dan peraturan terkait lainnya.</p>
+        <p>Dengan menggunakan HRIS, Anda memahami isi kebijakan ini. Perusahaan bertindak sebagai Pengendali Data Pribadi atas data karyawan yang dikelola di dalam sistem.</p>
+      </section>
+
+      <section id="data-dikumpulkan">
+        <h2>2. Data yang kami kumpulkan</h2>
+        <ul>
+          <li><strong>Identitas:</strong> nama lengkap, NIK karyawan, NIK KTP, tempat dan tanggal lahir, jenis kelamin, status pernikahan, alamat, nomor telepon, dan email.</li>
+          <li><strong>Kepegawaian:</strong> jabatan, departemen, atasan, tanggal bergabung, status dan riwayat kontrak, pendidikan, serta dokumen pendukung.</li>
+          <li><strong>Keluarga dan tanggungan:</strong> data anggota keluarga yang diperlukan untuk keperluan pajak dan jaminan sosial.</li>
+          <li><strong>Absensi:</strong> waktu masuk dan pulang, jadwal kerja, serta lokasi atau foto saat absen jika fitur tersebut diaktifkan.</li>
+          <li><strong>Cuti, lembur, dan penggajian:</strong> pengajuan, persetujuan, komponen gaji, rekening bank, NPWP, dan nomor BPJS.</li>
+          <li><strong>Data teknis:</strong> alamat IP, jenis perangkat dan peramban, serta catatan aktivitas (audit log) untuk keamanan.</li>
+        </ul>
+      </section>
+
+      <section id="tujuan">
+        <h2>3. Tujuan penggunaan data</h2>
+        <ul>
+          <li>Mengelola hubungan kerja, kontrak, dan administrasi kepegawaian.</li>
+          <li>Mencatat kehadiran, mengelola cuti dan lembur, serta menghitung dan membayarkan gaji.</li>
+          <li>Memenuhi kewajiban hukum, seperti ketenagakerjaan, perpajakan, dan jaminan sosial.</li>
+          <li>Menjaga keamanan akun, mencegah penyalahgunaan, dan melakukan audit internal.</li>
+          <li>Menghubungi Anda terkait proses kepegawaian dan pemberitahuan sistem.</li>
+        </ul>
+        <p>Data tidak digunakan untuk tujuan lain tanpa dasar hukum atau persetujuan Anda.</p>
+      </section>
+
+      <section id="pembagian">
+        <h2>4. Pembagian data</h2>
+        <p>Akses data dibatasi sesuai peran: karyawan melihat data miliknya, atasan melihat data tim yang relevan, dan HR Admin mengelola data sesuai kewenangannya. Data dapat dibagikan kepada:</p>
+        <ul>
+          <li>instansi pemerintah dan penyelenggara jaminan sosial atau pajak sesuai kewajiban hukum;</li>
+          <li>bank untuk pembayaran gaji;</li>
+          <li>penyedia infrastruktur dan layanan teknologi yang membantu operasional sistem, dengan kewajiban menjaga kerahasiaan.</li>
+        </ul>
+        <p>Kami tidak menjual data pribadi Anda.</p>
+      </section>
+
+      <section id="keamanan">
+        <h2>5. Penyimpanan dan keamanan</h2>
+        <p>Kami menerapkan langkah teknis dan organisasi yang wajar, antara lain kata sandi yang disimpan dalam bentuk hash, pembatasan akses berbasis peran, koneksi terenkripsi (HTTPS), dan pencatatan aktivitas pada data sensitif. Tidak ada sistem yang sepenuhnya bebas risiko. Jika terjadi kegagalan pelindungan data, Perusahaan akan menanganinya dan memberi tahu pihak terkait sesuai ketentuan peraturan yang berlaku.</p>
+      </section>
+
+      <section id="retensi">
+        <h2>6. Masa penyimpanan</h2>
+        <p>Data disimpan selama Anda bekerja di Perusahaan dan setelahnya selama diperlukan untuk memenuhi kewajiban hukum, penyelesaian sengketa, dan keperluan audit. Setelah masa tersebut berakhir, data dihapus atau dianonimkan.</p>
+      </section>
+
+      <section id="hak">
+        <h2>7. Hak Anda</h2>
+        <p>Sesuai peraturan pelindungan data pribadi, Anda berhak untuk:</p>
+        <ul>
+          <li>mengakses dan memperoleh salinan data pribadi Anda;</li>
+          <li>meminta perbaikan data yang tidak akurat atau tidak lengkap;</li>
+          <li>meminta penghapusan atau pembatasan pemrosesan data, sepanjang tidak bertentangan dengan kewajiban hukum;</li>
+          <li>menarik persetujuan untuk pemrosesan yang berdasarkan persetujuan;</li>
+          <li>mengajukan keberatan atau pengaduan terkait pemrosesan data Anda.</li>
+        </ul>
+        <p>Untuk menggunakan hak tersebut, hubungi HR melalui halaman <a href="{{ url_for('pages.contact') }}">Hubungi HR</a>.</p>
+      </section>
+
+      <section id="cookie">
+        <h2>8. Cookie dan sesi</h2>
+        <p>HRIS menggunakan cookie sesi yang diperlukan agar Anda tetap masuk dan agar sistem berfungsi dengan aman. Kami tidak menggunakan cookie iklan.</p>
+      </section>
+
+      <section id="perubahan">
+        <h2>9. Perubahan kebijakan</h2>
+        <p>Kebijakan ini dapat diperbarui sewaktu-waktu. Tanggal pembaruan terakhir tercantum di bagian atas halaman. Untuk perubahan yang penting, Perusahaan akan memberi pemberitahuan melalui sistem atau email.</p>
+      </section>
+
+      <section id="kontak">
+        <h2>10. Kontak</h2>
+        <p>Pertanyaan tentang kebijakan ini dapat disampaikan kepada HR {{ company_name }}{% if not hr_email.startswith('[') %} melalui <a href="mailto:{{ hr_email }}">{{ hr_email }}</a>{% endif %}, atau lewat halaman <a href="{{ url_for('pages.contact') }}">Hubungi HR</a>.</p>
+      </section>
+    </article>
+  </div>
+{% endblock %}
