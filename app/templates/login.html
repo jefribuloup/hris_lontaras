@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk — HRIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body class="login-page">
+  <main class="login-wrap">
+
+    <section class="login-intro">
+      <div class="login-brand"><span class="login-logo" aria-hidden="true"></span>HRIS</div>
+      <h1 class="login-title">Urusan kerja,<br>tanpa ribet.</h1>
+      <div class="login-bento">
+        <div class="login-tile login-tile--mint login-tile--tall">
+          <b>Absensi</b>
+          <span>Catat masuk dan pulang dari mana saja.</span>
+        </div>
+        <div class="login-tile login-tile--yellow">
+          <b>Cuti</b>
+          <span>Ajukan, pantau persetujuan.</span>
+        </div>
+        <div class="login-tile login-tile--blush">
+          <b>Slip gaji</b>
+          <span>Unduh kapan saja.</span>
+        </div>
+        <div class="login-tile login-tile--ink login-tile--wide">
+          <b>Jadwal dan tim</b>
+          <span>Lihat shift Anda dan siapa yang masuk hari ini.</span>
+        </div>
+      </div>
+    </section>
+
+    <form class="login-card" method="post" action="{{ url_for('auth.login') }}" data-login-form>
+      {# Jika memakai Flask-WTF: <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"> #}
+      <input type="hidden" name="role" value="karyawan">
+      <h2>Masuk</h2>
+      <p class="login-sub" data-sub>Untuk karyawan: absen, cuti, dan slip gaji.</p>
+
+      <div class="login-tabs" role="group" aria-label="Masuk sebagai">
+        <button type="button" class="login-tab" aria-pressed="true" data-role="karyawan" data-sub="Untuk karyawan: absen, cuti, dan slip gaji.">Karyawan</button>
+        <button type="button" class="login-tab" aria-pressed="false" data-role="atasan" data-sub="Untuk atasan: setujui cuti dan pantau tim.">Atasan</button>
+        <button type="button" class="login-tab" aria-pressed="false" data-role="hr_admin" data-sub="Untuk HR Admin: kelola data karyawan dan payroll.">HR Admin</button>
+      </div>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="login-alert" role="alert">{{ messages[0] }}</div>
+        {% endif %}
+      {% endwith %}
+
+      <div class="login-field">
+        <input id="identifier" name="identifier" type="text" placeholder=" " autocomplete="username" required>
+        <label for="identifier">Email atau NIK karyawan</label>
+      </div>
+
+      <div class="login-field">
+        <input id="password" name="password" type="password" placeholder=" " autocomplete="current-password" class="login-field__pw" required>
+        <label for="password">Kata sandi</label>
+        <button type="button" class="login-eye" aria-pressed="false" data-toggle-password>Tampilkan</button>
+      </div>
+
+      <div class="login-forgot"><a href="#">Lupa kata sandi?</a></div>
+      <button type="submit" class="login-go">Masuk</button>
+    </form>
+
+  </main>
+  <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+</body>
+</html>
