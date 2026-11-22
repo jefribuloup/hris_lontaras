@@ -1,0 +1,109 @@
+{% extends "pages/_layout.html" %}
+{# CATATAN: teks ini adalah draf umum. Mohon ditinjau penasihat hukum sebelum dipublikasikan. #}
+{% block title %}Syarat &amp; Ketentuan — HRIS{% endblock %}
+
+{% block page %}
+  <div class="pg-hero">
+    <h1>Syarat &amp; Ketentuan</h1>
+    <p>Terakhir diperbarui: {{ legal_updated }}</p>
+  </div>
+
+  <div class="pg-doc">
+    <nav class="pg-toc" aria-label="Daftar isi">
+      <h2>Daftar isi</h2>
+      <ol>
+        <li><a href="#penerimaan">Penerimaan syarat</a></li>
+        <li><a href="#akun">Akun dan keamanan</a></li>
+        <li><a href="#penggunaan">Penggunaan yang diizinkan</a></li>
+        <li><a href="#larangan">Larangan</a></li>
+        <li><a href="#data">Keakuratan data</a></li>
+        <li><a href="#absensi">Absensi dan lokasi</a></li>
+        <li><a href="#kerahasiaan">Kerahasiaan</a></li>
+        <li><a href="#kekayaan">Hak kekayaan intelektual</a></li>
+        <li><a href="#layanan">Ketersediaan layanan</a></li>
+        <li><a href="#tanggung-jawab">Batasan tanggung jawab</a></li>
+        <li><a href="#penghentian">Penghentian akses</a></li>
+        <li><a href="#hukum">Hukum yang berlaku</a></li>
+        <li><a href="#perubahan">Perubahan syarat</a></li>
+      </ol>
+    </nav>
+
+    <article class="pg-prose">
+      <section id="penerimaan">
+        <h2>1. Penerimaan syarat</h2>
+        <p>Dengan masuk dan menggunakan HRIS milik {{ company_name }}, Anda menyatakan telah membaca, memahami, dan menyetujui syarat dan ketentuan ini serta <a href="{{ url_for('pages.privacy') }}">Kebijakan Privasi</a>. Jika tidak setuju, mohon tidak menggunakan sistem.</p>
+      </section>
+
+      <section id="akun">
+        <h2>2. Akun dan keamanan</h2>
+        <ul>
+          <li>Akun dibuat dan dikelola oleh HR Admin dan hanya untuk digunakan oleh pemilik akun.</li>
+          <li>Anda bertanggung jawab menjaga kerahasiaan kata sandi dan tidak membagikannya kepada siapa pun.</li>
+          <li>Segera laporkan kepada HR jika Anda menduga akun disalahgunakan.</li>
+          <li>Aktivitas yang dilakukan melalui akun Anda dianggap dilakukan oleh Anda.</li>
+        </ul>
+      </section>
+
+      <section id="penggunaan">
+        <h2>3. Penggunaan yang diizinkan</h2>
+        <p>HRIS digunakan hanya untuk kepentingan pekerjaan dan administrasi kepegawaian, seperti mencatat kehadiran, mengajukan cuti atau lembur, melihat slip gaji, dan memperbarui data pribadi Anda.</p>
+      </section>
+
+      <section id="larangan">
+        <h2>4. Larangan</h2>
+        <ul>
+          <li>Mengakses data karyawan lain tanpa kewenangan.</li>
+          <li>Memanipulasi data absensi, termasuk memalsukan lokasi, foto, atau waktu.</li>
+          <li>Mencoba menembus keamanan sistem, menyebarkan kode berbahaya, atau mengganggu layanan.</li>
+          <li>Menyalin, menyebarkan, atau mengunggah data kepegawaian ke pihak yang tidak berhak.</li>
+          <li>Menggunakan sistem untuk tujuan yang melanggar hukum atau kebijakan Perusahaan.</li>
+        </ul>
+      </section>
+
+      <section id="data">
+        <h2>5. Keakuratan data</h2>
+        <p>Anda wajib memastikan data yang Anda masukkan atau ajukan benar dan terbaru. Perubahan data penting, seperti alamat, status pernikahan, rekening bank, atau tanggungan, harus segera diperbarui atau dilaporkan kepada HR.</p>
+      </section>
+
+      <section id="absensi">
+        <h2>6. Absensi dan lokasi</h2>
+        <p>Jika fitur absensi berbasis lokasi atau foto diaktifkan, data tersebut dikumpulkan hanya saat Anda melakukan absen dan digunakan untuk validasi kehadiran. Koreksi absensi harus diajukan melalui sistem dan mengikuti alur persetujuan.</p>
+      </section>
+
+      <section id="kerahasiaan">
+        <h2>7. Kerahasiaan</h2>
+        <p>Informasi yang Anda akses melalui HRIS bersifat rahasia. Pengguna dengan akses khusus, seperti atasan dan HR Admin, wajib memakai data hanya sesuai tugasnya dan menjaganya dari pihak yang tidak berwenang.</p>
+      </section>
+
+      <section id="kekayaan">
+        <h2>8. Hak kekayaan intelektual</h2>
+        <p>Tampilan, perangkat lunak, merek, dan konten HRIS dilindungi hukum dan tidak boleh disalin, dimodifikasi, atau didistribusikan tanpa izin tertulis dari pemiliknya.</p>
+      </section>
+
+      <section id="layanan">
+        <h2>9. Ketersediaan layanan</h2>
+        <p>Kami berupaya menjaga HRIS tetap tersedia, namun layanan dapat terhenti sementara karena pemeliharaan, pembaruan, atau gangguan di luar kendali kami. Jika sistem tidak dapat diakses, hubungi HR untuk prosedur alternatif.</p>
+      </section>
+
+      <section id="tanggung-jawab">
+        <h2>10. Batasan tanggung jawab</h2>
+        <p>Sejauh diizinkan hukum, Perusahaan tidak bertanggung jawab atas kerugian yang timbul dari penggunaan di luar ketentuan ini, kelalaian menjaga kerahasiaan akun, atau gangguan layanan yang di luar kendali wajar Perusahaan.</p>
+      </section>
+
+      <section id="penghentian">
+        <h2>11. Penghentian akses</h2>
+        <p>Akses dapat dibatasi atau dihentikan jika terjadi pelanggaran ketentuan ini, berakhirnya hubungan kerja, atau alasan keamanan. Penghentian tidak menghapus kewajiban kerahasiaan yang telah berlaku.</p>
+      </section>
+
+      <section id="hukum">
+        <h2>12. Hukum yang berlaku</h2>
+        <p>Ketentuan ini tunduk pada hukum Republik Indonesia. Perselisihan diupayakan diselesaikan secara musyawarah, dan jika tidak tercapai, melalui mekanisme yang diatur peraturan perundang-undangan yang berlaku.</p>
+      </section>
+
+      <section id="perubahan">
+        <h2>13. Perubahan syarat</h2>
+        <p>Syarat dan ketentuan dapat diperbarui sewaktu-waktu. Penggunaan sistem setelah pembaruan berarti Anda menyetujui versi terbaru. Pertanyaan dapat diajukan melalui halaman <a href="{{ url_for('pages.contact') }}">Hubungi HR</a>.</p>
+      </section>
+    </article>
+  </div>
+{% endblock %}
