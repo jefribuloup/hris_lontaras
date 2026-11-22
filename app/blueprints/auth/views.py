@@ -1,13 +1,23 @@
-from flask import flash, render_template, request
+from flask import render_template
 
 from . import bp
 
 
-@bp.route("/", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        # TODO: ganti dengan validasi user + role (Flask-Login) pada tahap Auth.
-        flash("Tampilan saja: proses login belum dibuat.")
-        # Turbo mewajibkan: jika form gagal, balas 422 (jika sukses, redirect dengan kode 303).
-        return render_template("login.html"), 422
-    return render_template("login.html")
+@bp.route("/kebijakan-privasi")
+def privacy():
+    return render_template("pages/privacy.html")
+
+
+@bp.route("/syarat-ketentuan")
+def terms():
+    return render_template("pages/terms.html")
+
+
+@bp.route("/pusat-bantuan")
+def help_center():
+    return render_template("pages/help.html")
+
+
+@bp.route("/hubungi-hr")
+def contact():
+    return render_template("pages/contact.html")
