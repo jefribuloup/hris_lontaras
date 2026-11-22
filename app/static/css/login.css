@@ -10,8 +10,8 @@
   --login-border:#6F7E7A;
 }
 *,*::before,*::after{box-sizing:border-box}
-.login-page{margin:0;min-height:100vh;font-family:'DM Sans',system-ui,sans-serif;color:var(--login-ink);background:var(--login-bg)}
-.login-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px;min-height:100vh;padding:56px}
+.login-page{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:'DM Sans',system-ui,sans-serif;color:var(--login-ink);background:var(--login-bg)}
+.login-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px;flex:1;padding:56px}
 
 /* ---------- Sisi kiri: intro + bento ---------- */
 .login-intro{flex:1 1 440px;max-width:560px}
@@ -65,11 +65,22 @@
 
 .login-page button:focus-visible,.login-page a:focus-visible{outline:3px solid var(--login-coral);outline-offset:2px}
 
+/* ---------- Footer ---------- */
+.login-footer{padding:20px 56px;border-top:1px solid #D5DBD6;font-size:13px;color:var(--login-muted)}
+.login-footer__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;max-width:1200px;margin:0 auto}
+.login-footer p{margin:0}
+.login-footer__nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.login-footer a{color:var(--login-muted);text-decoration:none}
+.login-footer a:hover{color:var(--login-ink);text-decoration:underline}
+
 /* ---------- Responsif & aksesibilitas ---------- */
 @media (max-width:900px){
   .login-wrap{padding:32px 20px;gap:32px}
   .login-title{font-size:40px}
   .login-card{padding:28px 22px}
+  .login-footer{padding:20px;text-align:center}
+  .login-footer__inner{justify-content:center}
+  .login-footer__nav{justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){
   .login-tile,.login-field label,.login-go{transition:none}
