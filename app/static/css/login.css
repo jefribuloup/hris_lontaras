@@ -1,0 +1,77 @@
+/* HRIS Login — Interaktif Bento. Semua kelas diawali "login-" agar tidak bentrok dengan CSS lain. */
+:root{
+  --login-bg:#F1F3EF;
+  --login-ink:#14211E;
+  --login-muted:#4A5955;
+  --login-accent:#0B6B5D;
+  --login-accent-dark:#084F45;
+  --login-coral:#FF6B4A;
+  --login-chip:#E4E9E6;
+  --login-border:#6F7E7A;
+}
+*,*::before,*::after{box-sizing:border-box}
+.login-page{margin:0;min-height:100vh;font-family:'DM Sans',system-ui,sans-serif;color:var(--login-ink);background:var(--login-bg)}
+.login-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px;min-height:100vh;padding:56px}
+
+/* ---------- Sisi kiri: intro + bento ---------- */
+.login-intro{flex:1 1 440px;max-width:560px}
+.login-brand{display:flex;align-items:center;gap:10px;margin-bottom:28px;font-weight:700;font-size:18px}
+.login-logo{position:relative;display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--login-ink)}
+.login-logo::after{content:"";position:absolute;top:3px;right:3px;width:9px;height:9px;border-radius:50%;background:var(--login-coral)}
+.login-title{margin:0 0 28px;font-family:'Bricolage Grotesque',sans-serif;font-size:56px;line-height:1.02;font-weight:700;letter-spacing:-.03em}
+.login-bento{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.login-tile{border-radius:24px;padding:22px;transition:transform .2s ease}
+.login-tile:hover{transform:translateY(-5px) rotate(-.6deg)}
+.login-tile b{display:block;margin-bottom:6px;font-size:20px}
+.login-tile span{font-size:14px;line-height:1.5}
+.login-tile--tall{grid-row:span 2;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.login-tile--tall b{margin-bottom:0}
+.login-tile--wide{grid-column:span 2}
+.login-tile--mint{background:#CDEBDD}
+.login-tile--yellow{background:#FFE27A}
+.login-tile--blush{background:#FFC3B3}
+.login-tile--ink{background:var(--login-ink);color:#fff}
+.login-tile--ink span{color:#D2DBD8}
+
+/* ---------- Sisi kanan: kartu form ---------- */
+.login-card{flex:1 1 380px;max-width:440px;background:#fff;border-radius:28px;padding:40px}
+.login-card h2{margin:0 0 6px;font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:700}
+.login-sub{margin:0 0 20px;font-size:15px;color:var(--login-muted)}
+
+.login-tabs{display:flex;gap:4px;margin-bottom:22px;padding:4px;border-radius:999px;background:var(--login-chip)}
+.login-tab{flex:1;height:40px;border:0;border-radius:999px;background:transparent;color:var(--login-ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.login-tab[aria-pressed="true"]{background:var(--login-ink);color:#fff}
+
+.login-alert{margin:0 0 18px;padding:12px 16px;border-radius:12px;background:#FFE3DC;color:#7A2410;font-size:14px;font-weight:500}
+
+/* Floating label */
+.login-field{position:relative;margin-bottom:16px}
+.login-field input{width:100%;height:58px;padding:22px 16px 6px;border:1.5px solid var(--login-border);border-radius:14px;background:#fff;color:var(--login-ink);font:inherit;font-size:16px}
+.login-field__pw{padding-right:110px!important}
+.login-field label{position:absolute;left:17px;top:18px;font-size:16px;color:var(--login-muted);pointer-events:none;transition:all .15s ease}
+.login-field input:focus + label,
+.login-field input:not(:placeholder-shown) + label{top:7px;font-size:12px;font-weight:600}
+.login-field input:focus{outline:2px solid var(--login-accent);border-color:var(--login-accent)}
+.login-eye{position:absolute;right:12px;top:15px;padding:6px;border:0;background:transparent;color:var(--login-accent);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+
+.login-forgot{margin:0 0 24px;font-size:14px}
+.login-forgot a{color:var(--login-accent);font-weight:600}
+.login-forgot a:hover{color:var(--login-accent-dark)}
+
+.login-go{width:100%;height:56px;border:0;border-radius:14px;background:var(--login-accent);color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:transform .1s ease,background .15s ease}
+.login-go:hover{background:var(--login-accent-dark)}
+.login-go:active{transform:scale(.98)}
+.login-go:disabled{opacity:.7;cursor:wait}
+
+.login-page button:focus-visible,.login-page a:focus-visible{outline:3px solid var(--login-coral);outline-offset:2px}
+
+/* ---------- Responsif & aksesibilitas ---------- */
+@media (max-width:900px){
+  .login-wrap{padding:32px 20px;gap:32px}
+  .login-title{font-size:40px}
+  .login-card{padding:28px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  .login-tile,.login-field label,.login-go{transition:none}
+  .login-tile:hover{transform:none}
+}
