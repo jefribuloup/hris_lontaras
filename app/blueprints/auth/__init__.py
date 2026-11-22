@@ -1,5 +1,5 @@
 from flask import Blueprint
 
-bp = Blueprint("auth", __name__)
+bp = Blueprint("pages", __name__)
 
 from . import views  # noqa: E402,F401
