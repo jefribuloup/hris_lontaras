@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Masuk — HRIS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% extends "base.html" %}
+
+{% block title %}Masuk — HRIS{% endblock %}
+{% block body_class %}login-page{% endblock %}
+
+{% block head %}
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-</head>
-<body class="login-page">
+  <meta name="turbo-cache-control" content="no-preview">
+  <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+{% endblock %}
+
+{% block body %}
   <main class="login-wrap">
 
     <section class="login-intro">
@@ -69,19 +70,4 @@
     </form>
 
   </main>
-
-  <footer class="login-footer">
-    <div class="login-footer__inner">
-      <p class="login-footer__copy">&copy; {{ current_year }} {{ company_name }}. Hak cipta dilindungi.</p>
-      <nav class="login-footer__nav" aria-label="Tautan footer">
-        <a href="#">Kebijakan Privasi</a>
-        <a href="#">Syarat &amp; Ketentuan</a>
-        <a href="#">Pusat Bantuan</a>
-        <a href="#">Hubungi HR</a>
-      </nav>
-      <p class="login-footer__ver">HRIS v{{ app_version }}</p>
-    </div>
-  </footer>
-  <script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
-</body>
-</html>
+{% endblock %}
