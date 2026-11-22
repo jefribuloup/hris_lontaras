@@ -1,0 +1,62 @@
+{% extends "pages/_layout.html" %}
+{% block title %}Hubungi HR — HRIS{% endblock %}
+
+{% block page %}
+  <div class="pg-hero">
+    <h1>Hubungi HR</h1>
+    <p>Pilih cara yang paling nyaman. Sebelum menghubungi, cek dulu <a href="{{ url_for('pages.help_center') }}">Pusat Bantuan</a>, siapa tahu jawabannya sudah ada.</p>
+  </div>
+
+  <div class="pg-grid">
+    <section class="pg-card pg-card--mint">
+      <h2>Email</h2>
+      {% if hr_email.startswith('[') %}
+        <p>{{ hr_email }}</p>
+      {% else %}
+        <p><a href="mailto:{{ hr_email }}">{{ hr_email }}</a></p>
+      {% endif %}
+      <p class="pg-note">Untuk pertanyaan umum dan permintaan yang perlu dokumen.</p>
+    </section>
+    <section class="pg-card pg-card--yellow">
+      <h2>Telepon / WhatsApp</h2>
+      {% if hr_phone.startswith('[') %}
+        <p>{{ hr_phone }}</p>
+      {% else %}
+        <p><a href="tel:{{ hr_phone|replace(' ', '') }}">{{ hr_phone }}</a></p>
+      {% endif %}
+      <p class="pg-note">Untuk hal yang perlu segera ditangani.</p>
+    </section>
+    <section class="pg-card pg-card--blush">
+      <h2>Jam layanan</h2>
+      <p>{{ hr_hours }} (waktu setempat)</p>
+      <p class="pg-note">Pesan di luar jam layanan dibalas pada hari kerja berikutnya.</p>
+    </section>
+    <section class="pg-card pg-card--ink">
+      <h2>Kantor</h2>
+      <p>{{ company_name }}<br>{{ hr_address }}</p>
+    </section>
+  </div>
+
+  <section class="pg-topics">
+    <h2>Pilih topik</h2>
+    <p>Tombol di bawah membuka email dengan subjek yang sudah terisi.</p>
+    <div class="pg-chips">
+      {% set subj = {
+        'Akun dan kata sandi': 'Bantuan akun HRIS',
+        'Absensi': 'Pertanyaan absensi',
+        'Cuti dan izin': 'Pertanyaan cuti dan izin',
+        'Slip gaji dan payroll': 'Pertanyaan slip gaji',
+        'Perubahan data pribadi': 'Permintaan perubahan data pribadi',
+        'Data pribadi dan privasi': 'Permintaan terkait data pribadi'
+      } %}
+      {% for label, subject in subj.items() %}
+        {% if hr_email.startswith('[') %}
+          <span class="pg-chip pg-chip--off">{{ label }}</span>
+        {% else %}
+          <a class="pg-chip" href="mailto:{{ hr_email }}?subject={{ subject|urlencode }}">{{ label }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <p class="pg-note">Sertakan NIK karyawan dan penjelasan singkat agar permintaan Anda lebih cepat diproses. Jangan mengirim kata sandi lewat email.</p>
+  </section>
+{% endblock %}
