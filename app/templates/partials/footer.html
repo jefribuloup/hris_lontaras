@@ -2,10 +2,10 @@
   <div class="site-footer__inner">
     <p>&copy; {{ current_year }} {{ company_name }}. Hak cipta dilindungi.</p>
     <nav class="site-footer__nav" aria-label="Tautan footer">
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat &amp; Ketentuan</a>
-      <a href="#">Pusat Bantuan</a>
-      <a href="#">Hubungi HR</a>
+      <a href="{{ url_for('pages.privacy') }}">Kebijakan Privasi</a>
+      <a href="{{ url_for('pages.terms') }}">Syarat &amp; Ketentuan</a>
+      <a href="{{ url_for('pages.help_center') }}">Pusat Bantuan</a>
+      <a href="{{ url_for('pages.contact') }}">Hubungi HR</a>
     </nav>
     <p>HRIS v{{ app_version }}</p>
   </div>
