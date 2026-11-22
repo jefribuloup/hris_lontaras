@@ -1,0 +1,85 @@
+/* Halaman informasi: kebijakan privasi, syarat, bantuan, kontak. Kelas diawali "pg-". */
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.pg-page{margin:0;min-height:100vh;display:flex;flex-direction:column;background:#F1F3EF;color:#14211E;font-family:'DM Sans',system-ui,sans-serif}
+.pg-page a:focus-visible,.pg-page input:focus-visible,.pg-page summary:focus-visible{outline:3px solid #FF6B4A;outline-offset:2px}
+
+.pg-header{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;max-width:1200px;margin:0 auto;padding:20px 56px;box-sizing:border-box}
+.pg-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:inherit;text-decoration:none}
+.pg-logo{position:relative;display:inline-block;width:28px;height:28px;border-radius:50%;background:#14211E}
+.pg-logo::after{content:"";position:absolute;top:3px;right:3px;width:9px;height:9px;border-radius:50%;background:#FF6B4A}
+.pg-back{font-size:14px;font-weight:600;color:#0B6B5D;text-decoration:none}
+.pg-back:hover{text-decoration:underline}
+
+.pg-main{flex:1;width:100%;max-width:1200px;margin:0 auto;padding:24px 56px 64px;box-sizing:border-box}
+.pg-hero{margin-bottom:36px;max-width:720px}
+.pg-hero h1{margin:0 0 12px;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.03em}
+.pg-hero p{margin:0;font-size:17px;line-height:1.6;color:#4A5955}
+.pg-hero a,.pg-note a,.pg-empty a{color:#0B6B5D;font-weight:600}
+
+/* Dokumen hukum */
+.pg-doc{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.pg-toc{position:sticky;top:24px;padding:20px 22px;border-radius:20px;background:#fff}
+.pg-toc h2{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A5955}
+.pg-toc ol{display:grid;gap:2px;margin:0;padding:0;list-style:none}
+.pg-toc a{display:block;padding:7px 10px;border-radius:8px;color:#14211E;font-size:14px;text-decoration:none}
+.pg-toc a:hover{background:#E4E9E6}
+.pg-prose{padding:40px 44px;border-radius:24px;background:#fff;font-size:16px;line-height:1.7}
+.pg-prose section{margin-bottom:32px;scroll-margin-top:24px}
+.pg-prose section:last-child{margin-bottom:0}
+.pg-prose h2{margin:0 0 10px;font-family:'Bricolage Grotesque',sans-serif;font-size:24px;letter-spacing:-.01em}
+.pg-prose p{margin:0 0 12px}
+.pg-prose ul{margin:0 0 12px;padding-left:22px}
+.pg-prose li{margin-bottom:6px}
+.pg-prose a{color:#0B6B5D;font-weight:600}
+
+/* Pusat bantuan */
+.pg-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pg-search{margin-bottom:32px;max-width:720px}
+.pg-search input{width:100%;height:56px;padding:0 20px;border:1.5px solid #6F7E7A;border-radius:16px;background:#fff;color:#14211E;font:inherit;font-size:16px;box-sizing:border-box}
+.pg-faq-group{margin-bottom:28px;max-width:820px}
+.pg-faq-group h2{margin:0 0 12px;font-family:'Bricolage Grotesque',sans-serif;font-size:22px}
+.pg-faq-group details{margin-bottom:10px;border:1px solid #DDE3DE;border-radius:16px;background:#fff}
+.pg-faq-group summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-weight:600;cursor:pointer;list-style:none}
+.pg-faq-group summary::-webkit-details-marker{display:none}
+.pg-faq-group summary::after{content:"+";flex:none;font-size:22px;font-weight:500;color:#0B6B5D}
+.pg-faq-group details[open] summary::after{content:"\2013"}
+.pg-faq-a{padding:0 22px 20px;line-height:1.65;color:#2D3B37}
+.pg-faq-a a{color:#0B6B5D;font-weight:600}
+.pg-empty{max-width:820px;padding:20px 22px;border-radius:16px;background:#fff;color:#4A5955}
+.pg-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;max-width:820px;margin-top:40px;padding:28px 32px;border-radius:24px;background:#14211E;color:#fff}
+.pg-cta h2{margin:0 0 4px;font-family:'Bricolage Grotesque',sans-serif;font-size:24px}
+.pg-cta p{margin:0;color:#D2DBD8}
+.pg-btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#FFE27A;color:#14211E;font-weight:700;text-decoration:none}
+.pg-btn:hover{background:#FFD84A}
+
+/* Kontak */
+.pg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
+.pg-card{padding:28px;border-radius:24px}
+.pg-card h2{margin:0 0 10px;font-size:18px}
+.pg-card p{margin:0 0 8px;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+.pg-card a{color:inherit;font-weight:700}
+.pg-note{font-size:14px!important;color:#4A5955;line-height:1.5}
+.pg-card .pg-note{color:inherit;opacity:.85}
+.pg-card--mint{background:#CDEBDD}
+.pg-card--yellow{background:#FFE27A}
+.pg-card--blush{background:#FFC3B3}
+.pg-card--ink{background:#14211E;color:#fff}
+.pg-topics{max-width:820px}
+.pg-topics h2{margin:0 0 6px;font-family:'Bricolage Grotesque',sans-serif;font-size:24px}
+.pg-topics>p{margin:0 0 16px;color:#4A5955}
+.pg-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.pg-chip{display:inline-block;padding:11px 18px;border:1.5px solid #0B6B5D;border-radius:999px;background:#fff;color:#0B6B5D;font-size:15px;font-weight:600;text-decoration:none}
+.pg-chip:hover{background:#0B6B5D;color:#fff}
+.pg-chip--off{border-color:#9AA8A3;color:#4A5955}
+
+@media (max-width:900px){
+  .pg-header{padding:16px 20px}
+  .pg-main{padding:16px 20px 48px}
+  .pg-doc{grid-template-columns:1fr;gap:20px}
+  .pg-toc{position:static}
+  .pg-prose{padding:28px 22px}
+  .pg-cta{padding:24px}
+}
