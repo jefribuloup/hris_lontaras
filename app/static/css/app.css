@@ -1,0 +1,18 @@
+/* Gaya global (dimuat di semua halaman lewat base.html) */
+:root{--app-ink:#14211E;--app-muted:#4A5955;--app-coral:#FF6B4A}
+
+/* Bilah progres Turbo saat berpindah halaman */
+.turbo-progress-bar{height:3px;background:var(--app-coral)}
+
+/* Footer */
+.site-footer{padding:20px 56px;border-top:1px solid #D5DBD6;font-size:13px;color:var(--app-muted)}
+.site-footer__inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;max-width:1200px;margin:0 auto}
+.site-footer p{margin:0}
+.site-footer__nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+.site-footer a{color:var(--app-muted);text-decoration:none}
+.site-footer a:hover{color:var(--app-ink);text-decoration:underline}
+.site-footer a:focus-visible{outline:3px solid var(--app-coral);outline-offset:2px}
+@media (max-width:900px){
+  .site-footer{padding:20px;text-align:center}
+  .site-footer__inner,.site-footer__nav{justify-content:center}
+}
